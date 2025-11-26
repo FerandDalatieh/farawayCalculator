@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Anna",
+    "RegionCards": [
+      3,
+      2,
+      64,
+      8,
+      20,
+      1,
+      62,
+      5
+    ],
+    "SanctuaryCards": [
+      {
+        "color": "red",
+        "ResourcesProvided": {
+          "blue": 0,
+          "red": 1,
+          "yellow": 0,
+          "nighttime": 0,
+          "clue": 0
+        },
+        "quest": {
+          "_comment": "questType can be: a color of a region, colors of two regions, set of region colors,clue symbols, null, Uddo symbols, Okiko symbols, Goldlog symbols, Nighttime symbol, set of wonders, ",
+          "questType": null,
+          "multiplier": null
+        }
+      },
+      {
+        "color": "blue",
+        "ResourcesProvided": {
+          "blue": 0,
+          "red": 0,
+          "yellow": 0,
+          "nighttime": 0,
+          "clue": 1
+        },
+        "quest": {
+          "_comment": "questType can be: a color of a region, colors of two regions, set of region colors,clue symbols, null, Uddo symbols, Okiko symbols, Goldlog symbols, Nighttime symbol, set of wonders, ",
+          "questType": null,
+          "multiplier": null
+        }
+      },
+      {
+        "color": "gray",
+        "ResourcesProvided": {
+          "blue": 0,
+          "red": 0,
+          "yellow": 0,
+          "nighttime": 0,
+          "clue": 0
+        },
+        "quest": {
+          "_comment": "questType can be: a color of a region, colors of two regions, set of region colors,clue symbols, null, Uddo symbols, Okiko symbols, Goldlog symbols, Nighttime symbol, set of wonders, ",
+          "questType": null,
+          "multiplier": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Bella",
+    "RegionCards": [
+      59,
+      44,
+      30,
+      19,
+      7,
+      6,
+      4,
+      1
+    ],
+    "SanctuaryCards": []
+  }
+]
