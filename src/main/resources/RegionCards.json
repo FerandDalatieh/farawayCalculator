@@ -1,0 +1,272 @@
+[
+  {
+    "explorationDuration": 0,
+    "color": "gray",
+    "resources": {
+      "uddu": 1,
+      "okiko": 1,
+      "goldlog": 1,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": null,
+      "multiplier": null
+    }
+  },
+  {
+    "explorationDuration": 1,
+    "color": "red",
+    "resources": {
+      "uddu": 1,
+      "okiko": 1,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": null,
+      "multiplier": null
+    }
+  },
+  {
+    "explorationDuration": 2,
+    "color": "blue",
+    "resources": {
+      "uddu": 2,
+      "okiko": 0,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": null,
+      "multiplier": null
+    }
+  },
+  {
+    "explorationDuration": 3,
+    "color": "green",
+    "resources": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": null,
+      "multiplier": 4
+    }
+  },
+  {
+    "explorationDuration": 4,
+    "color": "red",
+    "resources": {
+      "uddu": 1,
+      "okiko": 0,
+      "goldlog": 1,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": null,
+      "multiplier": null
+    }
+  },
+  {
+    "explorationDuration": 5,
+    "color": "green",
+    "resources": {
+      "uddu": 0,
+      "okiko": 1,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": null,
+      "multiplier": 2
+    }
+  },
+  {
+    "explorationDuration": 6,
+    "color": "blue",
+    "resources": {
+      "uddu": 1,
+      "okiko": 0,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": true
+    },
+    "quest": {
+      "type": null,
+      "multiplier": null
+    }
+  },
+  {
+    "explorationDuration": 7,
+    "color": "red",
+    "resources": {
+      "uddu": 0,
+      "okiko": 1,
+      "goldlog": 1,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": null,
+      "multiplier": null
+    }
+  },
+  {
+    "explorationDuration": 8,
+    "color": "green",
+    "resources": {
+      "uddu": 0,
+      "okiko": 1,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": true
+    },
+    "quest": {
+      "type": null,
+      "multiplier": null
+    }
+  },
+  {
+    "explorationDuration": 9,
+    "color": "blue",
+    "resources": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": null,
+      "multiplier": 5
+    }
+  },
+  {
+    "explorationDuration": 10,
+    "color": "red",
+    "resources": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": "nightTime",
+      "multiplier": 3
+    }
+  },
+  {
+    "explorationDuration": 11,
+    "color": "green",
+    "resources": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": "clue",
+      "multiplier": 2
+    }
+  },
+  {
+    "explorationDuration": 12,
+    "color": "yellow",
+    "resources": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 1,
+      "nightTime": false,
+      "clue": true
+    },
+    "quest": {
+      "type": null,
+      "multiplier": null
+    }
+  },
+  {
+    "explorationDuration": 13,
+    "color": "blue",
+    "resources": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": "uddu",
+      "multiplier": 2
+    }
+  },
+  {
+    "explorationDuration": 14,
+    "color": "red",
+    "resources": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 1,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": "nightTime",
+      "multiplier": 2
+    }
+  },
+  {
+    "explorationDuration": 15,
+    "color": "green",
+    "resources": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": true
+    },
+    "quest": {
+      "type": "okiko",
+      "multiplier": 2
+    }
+  },
+  {
+    "explorationDuration": 16,
+    "color": "red",
+    "resources": {
+      "uddu": 0,
+      "okiko": 1,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": "okiko",
+      "multiplier": 2
+    }
+  },
+  {
+    "explorationDuration": 17,
+    "color": "blue",
+    "resources": {
+      "uddu": 1,
+      "okiko": 0,
+      "goldlog": 0,
+      "nightTime": false,
+      "clue": false
+    },
+    "quest": {
+      "type": "uddu",
+      "multiplier": 3
+    }
+  }
+]
