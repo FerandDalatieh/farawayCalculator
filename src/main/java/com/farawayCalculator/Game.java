@@ -12,7 +12,7 @@ public class Game {
 
     public void printGameResult() {
         String winnerName = players.getFirst().name;
-        int winnerScore = Score.calculateScore(players.getFirst());
+        int winnerScore = 0;
         int currentScore = 0;
         String currentName;
         boolean isTie = true;
