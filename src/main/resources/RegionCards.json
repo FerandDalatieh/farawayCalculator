@@ -9,6 +9,11 @@
       "nightTime": false,
       "clue": false
     },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
+    },
     "quest": {
       "type": null,
       "multiplier": null
@@ -23,6 +28,11 @@
       "goldlog": 0,
       "nightTime": false,
       "clue": false
+    },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
     },
     "quest": {
       "type": null,
@@ -39,6 +49,11 @@
       "nightTime": false,
       "clue": false
     },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
+    },
     "quest": {
       "type": null,
       "multiplier": null
@@ -53,6 +68,11 @@
       "goldlog": 0,
       "nightTime": false,
       "clue": false
+    },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
     },
     "quest": {
       "type": null,
@@ -69,6 +89,11 @@
       "nightTime": false,
       "clue": false
     },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
+    },
     "quest": {
       "type": null,
       "multiplier": null
@@ -83,6 +108,11 @@
       "goldlog": 0,
       "nightTime": false,
       "clue": false
+    },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
     },
     "quest": {
       "type": null,
@@ -99,6 +129,11 @@
       "nightTime": false,
       "clue": true
     },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
+    },
     "quest": {
       "type": null,
       "multiplier": null
@@ -113,6 +148,11 @@
       "goldlog": 1,
       "nightTime": false,
       "clue": false
+    },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
     },
     "quest": {
       "type": null,
@@ -129,6 +169,11 @@
       "nightTime": false,
       "clue": true
     },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
+    },
     "quest": {
       "type": null,
       "multiplier": null
@@ -143,6 +188,11 @@
       "goldlog": 0,
       "nightTime": false,
       "clue": false
+    },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
     },
     "quest": {
       "type": null,
@@ -159,6 +209,11 @@
       "nightTime": false,
       "clue": false
     },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
+    },
     "quest": {
       "type": "nightTime",
       "multiplier": 3
@@ -173,6 +228,11 @@
       "goldlog": 0,
       "nightTime": false,
       "clue": false
+    },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
     },
     "quest": {
       "type": "clue",
@@ -189,6 +249,11 @@
       "nightTime": false,
       "clue": true
     },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
+    },
     "quest": {
       "type": null,
       "multiplier": null
@@ -203,6 +268,11 @@
       "goldlog": 0,
       "nightTime": false,
       "clue": false
+    },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
     },
     "quest": {
       "type": "uddu",
@@ -219,6 +289,11 @@
       "nightTime": false,
       "clue": false
     },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
+    },
     "quest": {
       "type": "nightTime",
       "multiplier": 2
@@ -233,6 +308,11 @@
       "goldlog": 0,
       "nightTime": false,
       "clue": true
+    },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
     },
     "quest": {
       "type": "okiko",
@@ -249,6 +329,11 @@
       "nightTime": false,
       "clue": false
     },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 0,
+      "goldlog": 0
+    },
     "quest": {
       "type": "okiko",
       "multiplier": 2
@@ -263,6 +348,11 @@
       "goldlog": 0,
       "nightTime": false,
       "clue": false
+    },
+    "requirements": {
+      "uddu": 0,
+      "okiko": 2,
+      "goldlog": 0
     },
     "quest": {
       "type": "uddu",
