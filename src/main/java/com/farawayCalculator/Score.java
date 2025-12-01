@@ -21,8 +21,8 @@ public class Score {
 
             int explorationDurationOfCardPosition = regionCardsExplorationDurations.get(cardPosition);
             quest = RegionCardsCollection.getRegionCard(explorationDurationOfCardPosition).quest;
-
             questMultiplier = quest.multiplier;
+
             // When multiplier is not null, there could be score to be calculated
             if (questMultiplier != null && requirementsMet(player, cardPosition)) {
                 questType = quest.type;
@@ -34,6 +34,32 @@ public class Score {
                 }
             }
         }
+
+        int sanctuaryCardsCount = player.sanctuaryCards.size();
+
+        if (sanctuaryCardsCount > 0) {
+            // Loop through sanctuary cards
+            for (int i = 0; i < sanctuaryCardsCount; i++) {
+
+                SanctuaryCard sanctuaryCard = player.sanctuaryCards.get(i);
+                quest = sanctuaryCard.quest;
+                questMultiplier = quest.multiplier;
+
+                if (questMultiplier != null) {
+                    questType = quest.type;
+                    if (questType == null) {
+                        score += questMultiplier;
+                    } else {
+                        // We are using visibleIndex=0 (left most) to indicate that all region cards are open
+                        visibleCriteria = countVisibleCriteria(player, 0, questType);
+                        score += visibleCriteria * questMultiplier;
+                    }
+                }
+
+            }
+        }
+
+
         return score;
     }
 
@@ -137,6 +163,97 @@ public class Score {
                     countVisibleGoldlog += resources.goldlog;
                 }
                 default -> countVisibleCriteria = countVisibleCriteria;
+            }
+        }
+
+        int sanctuaryCardsCount = player.sanctuaryCards.size();
+
+        if (sanctuaryCardsCount > 0) {
+            for (int i = 0; i < sanctuaryCardsCount; i++) {
+                SanctuaryCard sanctuaryCard = player.sanctuaryCards.get(i);
+                Resources resources = sanctuaryCard.resources;
+                String color = sanctuaryCard.color;
+
+                switch (questType) {
+                    case "uddu" -> countVisibleCriteria += resources.uddu;
+                    case "okiko" -> countVisibleCriteria += resources.okiko;
+                    case "goldlog" -> countVisibleCriteria += resources.goldlog;
+                    case "nightTime" -> {
+                        if (resources.nightTime) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "clue" -> {
+                        if (resources.clue) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "red" -> {
+                        if (color.equals("red")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "green" -> {
+                        if (color.equals("green")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "blue" -> {
+                        if (color.equals("blue")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "gray" -> {
+                        if (color.equals("gray")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "yellow/red" -> {
+                        if (color.equals("yellow") || color.equals("red")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "yellow/green" -> {
+                        if (color.equals("yellow") || color.equals("green")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "yellow/blue" -> {
+                        if (color.equals("yellow") || color.equals("blue")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "blue/green" -> {
+                        if (color.equals("blue") || color.equals("green")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "red/green" -> {
+                        if (color.equals("red") || color.equals("green")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "blue/red" -> {
+                        if (color.equals("blue") || color.equals("red")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "colorSet" -> {
+                        switch (color) {
+                            case "green" -> countVisibleGreenCards++;
+                            case "red" -> countVisibleRedCards++;
+                            case "blue" -> countVisibleBlueCards++;
+                            case "yellow" -> countVisibleYellowCards++;
+                            default -> countVisibleCriteria = countVisibleCriteria;
+                        }
+                    }
+                    case "resourcesSet" -> {
+                        countVisibleUddu += resources.uddu;
+                        countVisibleOkiko += resources.okiko;
+                        countVisibleGoldlog += resources.goldlog;
+                    }
+                    default -> countVisibleCriteria = countVisibleCriteria;
+                }
             }
         }
 
