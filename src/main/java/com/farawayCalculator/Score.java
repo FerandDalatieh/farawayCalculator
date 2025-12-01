@@ -2,6 +2,7 @@ package com.farawayCalculator;
 
 import java.util.List;
 
+import static com.farawayCalculator.utils.min3;
 import static com.farawayCalculator.utils.min4;
 
 public class Score {
@@ -15,24 +16,21 @@ public class Score {
         Quest quest;
         int visibleCriteria = 0;
 
-        // Loop through the 8 region cards from right last to first
+        // Loop through the 8 region cards from most right to first left
         for (int cardPosition = 7; cardPosition >= 0; cardPosition--) {
 
-            quest = RegionCardsCollection.getRegionCard(regionCardsExplorationDurations.get(cardPosition)).quest;
+            int explorationDurationOfCardPosition = regionCardsExplorationDurations.get(cardPosition);
+            quest = RegionCardsCollection.getRegionCard(explorationDurationOfCardPosition).quest;
 
             questMultiplier = quest.multiplier;
             // When multiplier is not null, there could be score to be calculated
-            if (questMultiplier != null) {
+            if (questMultiplier != null && requirementsMet(player, cardPosition)) {
                 questType = quest.type;
                 if (questType == null) {
-                    if (requirementsMet(player, cardPosition)) {
-                        score += questMultiplier;
-                    }
+                    score += questMultiplier;
                 } else {
-                    if (requirementsMet(player, cardPosition)) {
-                        visibleCriteria = countVisibleCriteria(player, cardPosition, questType);
-                        score += visibleCriteria * questMultiplier;
-                    }
+                    visibleCriteria = countVisibleCriteria(player, cardPosition, questType);
+                    score += visibleCriteria * questMultiplier;
                 }
             }
         }
@@ -49,11 +47,16 @@ public class Score {
         int countVisibleRedCards = 0;
         int countVisibleBlueCards = 0;
         int countVisibleYellowCards = 0;
+        int countVisibleUddu = 0;
+        int countVisibleOkiko = 0;
+        int countVisibleGoldlog = 0;
 
-        for (int i = 7; i >= visibleIndex; i--) {
+        for (int cardPosition = 7; cardPosition >= visibleIndex; cardPosition--) {
 
-            Resources resources = RegionCardsCollection.getRegionCard(player.regionCardsExplorationDurations.get(i)).resources;
-            String color = RegionCardsCollection.getRegionCard(player.regionCardsExplorationDurations.get(i)).color;
+            int explorationDurationOfCardPosition = player.regionCardsExplorationDurations.get(cardPosition);
+            RegionCard regionCardOfCardPosition = RegionCardsCollection.getRegionCard(explorationDurationOfCardPosition);
+            Resources resources = regionCardOfCardPosition.resources;
+            String color = regionCardOfCardPosition.color;
 
             switch (questType) {
                 case "uddu" -> countVisibleCriteria += resources.uddu;
@@ -84,6 +87,11 @@ public class Score {
                         countVisibleCriteria += 1;
                     }
                 }
+                case "gray" -> {
+                    if (color.equals("gray")) {
+                        countVisibleCriteria += 1;
+                    }
+                }
                 case "yellow/red" -> {
                     if (color.equals("yellow") || color.equals("red")) {
                         countVisibleCriteria += 1;
@@ -99,6 +107,21 @@ public class Score {
                         countVisibleCriteria += 1;
                     }
                 }
+                case "blue/green" -> {
+                    if (color.equals("blue") || color.equals("green")) {
+                        countVisibleCriteria += 1;
+                    }
+                }
+                case "red/green" -> {
+                    if (color.equals("red") || color.equals("green")) {
+                        countVisibleCriteria += 1;
+                    }
+                }
+                case "blue/red" -> {
+                    if (color.equals("blue") || color.equals("red")) {
+                        countVisibleCriteria += 1;
+                    }
+                }
                 case "colorSet" -> {
                     switch (color) {
                         case "green" -> countVisibleGreenCards++;
@@ -108,12 +131,19 @@ public class Score {
                         default -> countVisibleCriteria = countVisibleCriteria;
                     }
                 }
+                case "resourcesSet" -> {
+                    countVisibleUddu += resources.uddu;
+                    countVisibleOkiko += resources.okiko;
+                    countVisibleGoldlog += resources.goldlog;
+                }
                 default -> countVisibleCriteria = countVisibleCriteria;
             }
         }
 
         if (questType.equals("colorSet")) {
             countVisibleCriteria = min4(countVisibleGreenCards, countVisibleRedCards, countVisibleBlueCards, countVisibleYellowCards);
+        } else if (questType.equals("resourcesSet")) {
+            countVisibleCriteria = min3(countVisibleUddu, countVisibleOkiko, countVisibleGoldlog);
         }
 
         return countVisibleCriteria;
