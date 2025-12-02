@@ -42,3 +42,5 @@ build/
 ### Content folder ###
 /content
 
+### Build ###
+dependency-reduced-pom.xml

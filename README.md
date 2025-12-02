@@ -13,11 +13,27 @@ This project here aims to make it simple to calculate the score of each player.
 
 *  [jackson-databind](https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind)
 
+### Prerequisites
+
+* Java JDK 21+
+* Maven installed
+
+
+### Build a runnable JAR (including dependencies)
+1. Open a terminal in the project root.
+2. Build the project using Maven:
+```sh
+mvn clean package
+```
+3. After building, a shaded (fat) JAR will be created in the target/ folder:
+```sh
+java -jar target/farawayCalculator-1.0-SNAPSHOT.jar 
+```
 
 ### Executing program
 
-* Edit the content of the file farawayCalculator/src/main/resources/InputTemplate.json to correspond with your game
-* Run the Main.java class
+* Edit the content of the file /src/main/resources/InputTemplate.json to correspond with your game
+* Run the app
 
 
 ## License
