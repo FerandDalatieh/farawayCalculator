@@ -1,13 +1,18 @@
 package com.farawayCalculator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
 
     public List<Player> players;
+    public String winnerPlayer;
+    public int winnerScore = 0;
+    public List<PlayerScore> playerScore;
 
     public Game(List<Player> players) {
         this.players = players;
+        playerScore = new ArrayList<>(players.size());
     }
 
     public void printGameResult() {
@@ -18,7 +23,7 @@ public class Game {
         boolean isTie = true;
 
         for (int i = 0; i < players.size(); i++) {
-            currentScore = Score.calculateScore(players.get(i));
+            currentScore = ScoreCalculator.calculateScore(players.get(i)).totalScore;
             currentName = players.get(i).name;
 
             System.out.println(currentName + " got " + currentScore + " points.");

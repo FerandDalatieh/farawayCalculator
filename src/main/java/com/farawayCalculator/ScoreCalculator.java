@@ -5,7 +5,7 @@ import java.util.List;
 import static com.farawayCalculator.utils.min3;
 import static com.farawayCalculator.utils.min4;
 
-public class Score {
+public class ScoreCalculator {
 
     public static PlayerScore calculateScore(Player player) {
 
