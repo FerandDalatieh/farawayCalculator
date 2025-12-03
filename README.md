@@ -11,7 +11,10 @@ This project here aims to make it simple to calculate the score of each player.
 
 ### Dependencies
 
-*  [jackson-databind](https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind)
+* [jackson-databind](https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind)
+* [spark-core](https://mvnrepository.com/artifact/com.sparkjava/spark-core)
+* [slf4j-api](https://mvnrepository.com/artifact/org.slf4j/slf4j-api)
+* [slf4j-simple](https://mvnrepository.com/artifact/org.slf4j/slf4j-simple)
 
 ### Prerequisites
 
@@ -27,13 +30,13 @@ mvn clean package
 ```
 3. After building, a shaded (fat) JAR will be created in the target/ folder:
 ```sh
-java -jar target/farawayCalculator-1.0-SNAPSHOT.jar 
+java -cp target/farawayCalculator-1.0-SNAPSHOT.jar com.farawayCalculator.ApiServer 
 ```
 
 ### Executing program
 
-* Edit the content of the file /src/main/resources/InputTemplate.json to correspond with your game
-* Run the app
+* Send POST request (for example in postman or using cUrl ... etc.) to the endpoint: http://localhost:8080/score. THe request body should be in the format of /src/main/resources/InputTemplate.json.
+* The response would then return the individual cards scored of each player, total score of each player and the name/score of the winner.
 
 
 ## License
