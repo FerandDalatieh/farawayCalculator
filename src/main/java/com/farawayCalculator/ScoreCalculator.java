@@ -5,16 +5,17 @@ import java.util.List;
 import static com.farawayCalculator.utils.min3;
 import static com.farawayCalculator.utils.min4;
 
-public class Score {
+public class ScoreCalculator {
 
-    public static int calculateScore(Player player) {
+    public static PlayerScore calculateScore(Player player) {
 
         List<Integer> regionCardsExplorationDurations = player.regionCardsExplorationDurations;
-        int score = 0;
+        int totalScore = 0;
         Integer questMultiplier = 0;
         String questType;
         Quest quest;
         int visibleCriteria = 0;
+        PlayerScore playerScore = new PlayerScore();
 
         // Loop through the 8 region cards from most right to first left
         for (int cardPosition = 7; cardPosition >= 0; cardPosition--) {
@@ -27,15 +28,20 @@ public class Score {
             if (questMultiplier != null && requirementsMet(player, cardPosition)) {
                 questType = quest.type;
                 if (questType == null) {
-                    score += questMultiplier;
+                    playerScore.cardsScores[7-cardPosition] = questMultiplier;
+                    totalScore += questMultiplier;
                 } else {
                     visibleCriteria = countVisibleCriteria(player, cardPosition, questType);
-                    score += visibleCriteria * questMultiplier;
+                    playerScore.cardsScores[7-cardPosition] = visibleCriteria * questMultiplier;
+                    totalScore += visibleCriteria * questMultiplier;
                 }
+            } else {
+                playerScore.cardsScores[7-cardPosition] = 0;
             }
         }
 
         int sanctuaryCardsCount = player.sanctuaryCards.size();
+        playerScore.cardsScores[8] = 0;
 
         if (sanctuaryCardsCount > 0) {
             // Loop through sanctuary cards
@@ -48,19 +54,23 @@ public class Score {
                 if (questMultiplier != null) {
                     questType = quest.type;
                     if (questType == null) {
-                        score += questMultiplier;
+                        playerScore.cardsScores[8] += questMultiplier;
+                        totalScore += questMultiplier;
                     } else {
                         // We are using visibleIndex=0 (left most) to indicate that all region cards are open
                         visibleCriteria = countVisibleCriteria(player, 0, questType);
-                        score += visibleCriteria * questMultiplier;
+                        playerScore.cardsScores[8] += visibleCriteria * questMultiplier;
+                        totalScore += visibleCriteria * questMultiplier;
                     }
                 }
 
             }
         }
 
+        playerScore.name = player.name;
+        playerScore.totalScore = totalScore;
 
-        return score;
+        return playerScore;
     }
 
     public static int countVisibleCriteria(Player player, int visibleIndex, String questType) {
@@ -110,6 +120,11 @@ public class Score {
                 }
                 case "blue" -> {
                     if (color.equals("blue")) {
+                        countVisibleCriteria += 1;
+                    }
+                }
+                case "yellow" -> {
+                    if (color.equals("yellow")) {
                         countVisibleCriteria += 1;
                     }
                 }
@@ -200,6 +215,11 @@ public class Score {
                     }
                     case "blue" -> {
                         if (color.equals("blue")) {
+                            countVisibleCriteria += 1;
+                        }
+                    }
+                    case "yellow" -> {
+                        if (color.equals("yellow")) {
                             countVisibleCriteria += 1;
                         }
                     }
