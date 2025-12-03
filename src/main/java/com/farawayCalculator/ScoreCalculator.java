@@ -133,32 +133,32 @@ public class ScoreCalculator {
                         countVisibleCriteria += 1;
                     }
                 }
-                case "yellow/red" -> {
+                case "yellow/red", "red/yellow" -> {
                     if (color.equals("yellow") || color.equals("red")) {
                         countVisibleCriteria += 1;
                     }
                 }
-                case "yellow/green" -> {
+                case "yellow/green", "green/yellow" -> {
                     if (color.equals("yellow") || color.equals("green")) {
                         countVisibleCriteria += 1;
                     }
                 }
-                case "yellow/blue" -> {
+                case "yellow/blue", "blue/yellow" -> {
                     if (color.equals("yellow") || color.equals("blue")) {
                         countVisibleCriteria += 1;
                     }
                 }
-                case "blue/green" -> {
+                case "blue/green", "green/blue" -> {
                     if (color.equals("blue") || color.equals("green")) {
                         countVisibleCriteria += 1;
                     }
                 }
-                case "red/green" -> {
+                case "red/green", "green/red" -> {
                     if (color.equals("red") || color.equals("green")) {
                         countVisibleCriteria += 1;
                     }
                 }
-                case "blue/red" -> {
+                case "blue/red", "red/blue" -> {
                     if (color.equals("blue") || color.equals("red")) {
                         countVisibleCriteria += 1;
                     }
@@ -228,32 +228,32 @@ public class ScoreCalculator {
                             countVisibleCriteria += 1;
                         }
                     }
-                    case "yellow/red" -> {
+                    case "yellow/red", "red/yellow" -> {
                         if (color.equals("yellow") || color.equals("red")) {
                             countVisibleCriteria += 1;
                         }
                     }
-                    case "yellow/green" -> {
+                    case "yellow/green", "green/yellow" -> {
                         if (color.equals("yellow") || color.equals("green")) {
                             countVisibleCriteria += 1;
                         }
                     }
-                    case "yellow/blue" -> {
+                    case "yellow/blue", "blue/yellow" -> {
                         if (color.equals("yellow") || color.equals("blue")) {
                             countVisibleCriteria += 1;
                         }
                     }
-                    case "blue/green" -> {
+                    case "blue/green", "green/blue" -> {
                         if (color.equals("blue") || color.equals("green")) {
                             countVisibleCriteria += 1;
                         }
                     }
-                    case "red/green" -> {
+                    case "red/green", "green/red" -> {
                         if (color.equals("red") || color.equals("green")) {
                             countVisibleCriteria += 1;
                         }
                     }
-                    case "blue/red" -> {
+                    case "blue/red", "red/blue" -> {
                         if (color.equals("blue") || color.equals("red")) {
                             countVisibleCriteria += 1;
                         }
