@@ -41,6 +41,9 @@ java -cp target/farawayCalculator-1.0-SNAPSHOT.jar com.farawayCalculator.ApiServ
 Please note: the sanctuary cards IDs are the numbers that are shown on /src/main/resources/numbered-sanctuary_cards.png.
 If you prefer to directly add detailed sanctuary cards in the request body, you can use the template /src/main/resources/InputTemplate_detailed-sanctuary-cards.json instead.
 
+## Acknowledgments
+
+* image of sanctuary cards is from [boardgamearena](https://boardgamearena.com/). 
 
 ## License
 
