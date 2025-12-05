@@ -16,11 +16,15 @@ public class ScoreCalculator {
         Quest quest;
         int visibleCriteria = 0;
         PlayerScore playerScore = new PlayerScore();
+        int lowestRegionCardExplorationDuration = 76;
 
         // Loop through the 8 region cards from most right to first left
         for (int cardPosition = 7; cardPosition >= 0; cardPosition--) {
 
             int explorationDurationOfCardPosition = regionCardsExplorationDurations.get(cardPosition);
+            if(explorationDurationOfCardPosition < lowestRegionCardExplorationDuration){
+                lowestRegionCardExplorationDuration = explorationDurationOfCardPosition;
+            }
             quest = RegionCardsCollection.getRegionCard(explorationDurationOfCardPosition).quest;
             questMultiplier = quest.multiplier;
 
@@ -84,6 +88,9 @@ public class ScoreCalculator {
 
         playerScore.name = player.name;
         playerScore.totalScore = totalScore;
+
+        player.lowestRegionCardExplorationDuration = lowestRegionCardExplorationDuration;
+        player.totalScore = totalScore;
 
         return playerScore;
     }

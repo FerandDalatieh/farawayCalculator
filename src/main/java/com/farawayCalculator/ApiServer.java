@@ -22,13 +22,40 @@ public class ApiServer {
             );
 
             Game game = new Game(players);
+            int winnerScore = 0;
 
             for (Player player:players){
                 int score = ScoreCalculator.calculateScore(player).totalScore;
                 game.playerScore.add(ScoreCalculator.calculateScore(player));
-                if(game.winnerScore < score){
-                    game.winnerScore = score;
+                if (winnerScore < score) {
+                    winnerScore = score;
                     game.winnerPlayer = player.name;
+                }
+            }
+
+            int lowestRegionCardExplorationDurationInGame = 76;
+            boolean tiedGame = false;
+            int playersWithWinnerScore = 0;
+
+            for (Player player : players) {
+                if (player.totalScore == winnerScore) {
+                    playersWithWinnerScore++;
+                }
+            }
+            game.winnerScore = winnerScore;
+
+            if (playersWithWinnerScore > 1) {
+                tiedGame = true;
+            }
+
+            if (tiedGame) {
+                for (Player player : players) {
+                    if (player.totalScore == winnerScore) {
+                        if (player.lowestRegionCardExplorationDuration < lowestRegionCardExplorationDurationInGame) {
+                            lowestRegionCardExplorationDurationInGame = player.lowestRegionCardExplorationDuration;
+                            game.winnerPlayer = player.name;
+                        }
+                    }
                 }
             }
 
