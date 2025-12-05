@@ -39,7 +39,7 @@ java -cp target/farawayCalculator-1.0-SNAPSHOT.jar com.farawayCalculator.ApiServ
 * The response would then return the individual cards scored of each player, total score of each player and the name/score of the winner.
 
 Please note: the sanctuary cards IDs are the numbers that are shown on /src/main/resources/numbered-sanctuary_cards.png.
-If you prefer to directly add detailed sanctuary cards in the response, you can use the template /src/main/resources/InputTemplate_detailed-sanctuary-cards.json instead.
+If you prefer to directly add detailed sanctuary cards in the request body, you can use the template /src/main/resources/InputTemplate_detailed-sanctuary-cards.json instead.
 
 
 ## License
