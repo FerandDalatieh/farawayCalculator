@@ -8,5 +8,7 @@ public class Player {
     public List<Integer> regionCardsExplorationDurations;
     public List<SanctuaryCard> sanctuaryCards;
     public List<Integer> sanctuaryCardsIDs;
+    public int lowestRegionCardExplorationDuration;
+    public int totalScore;
 
 }
