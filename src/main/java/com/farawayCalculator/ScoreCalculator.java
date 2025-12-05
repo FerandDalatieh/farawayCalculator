@@ -40,14 +40,29 @@ public class ScoreCalculator {
             }
         }
 
-        int sanctuaryCardsCount = player.sanctuaryCards.size();
+        int sanctuaryCardsCount = 0;
+        String sanctuaryCardsVariant = "";
+        if (player.sanctuaryCards != null) {
+            sanctuaryCardsCount = player.sanctuaryCards.size();
+            sanctuaryCardsVariant = "DETAILED";
+        } else if (player.sanctuaryCardsIDs != null){
+            sanctuaryCardsCount = player.sanctuaryCardsIDs.size();
+            sanctuaryCardsVariant = "ID";
+        }
+
         playerScore.cardsScores[8] = 0;
 
         if (sanctuaryCardsCount > 0) {
             // Loop through sanctuary cards
             for (int i = 0; i < sanctuaryCardsCount; i++) {
 
-                SanctuaryCard sanctuaryCard = player.sanctuaryCards.get(i);
+                SanctuaryCard sanctuaryCard = new SanctuaryCard();
+                if(sanctuaryCardsVariant.equals("DETAILED")){
+                    sanctuaryCard = player.sanctuaryCards.get(i);
+                } else if (sanctuaryCardsVariant.equals("ID")){
+                    sanctuaryCard = SanctuaryCardsCollection.getSanctuaryCard(player.sanctuaryCardsIDs.get(i));
+                }
+
                 quest = sanctuaryCard.quest;
                 questMultiplier = quest.multiplier;
 
@@ -181,11 +196,26 @@ public class ScoreCalculator {
             }
         }
 
-        int sanctuaryCardsCount = player.sanctuaryCards.size();
+        int sanctuaryCardsCount = 0;
+        String sanctuaryCardsVariant = "";
+        if (player.sanctuaryCards != null) {
+            sanctuaryCardsCount = player.sanctuaryCards.size();
+            sanctuaryCardsVariant = "DETAILED";
+        } else if (player.sanctuaryCardsIDs != null){
+            sanctuaryCardsCount = player.sanctuaryCardsIDs.size();
+            sanctuaryCardsVariant = "ID";
+        }
 
         if (sanctuaryCardsCount > 0) {
             for (int i = 0; i < sanctuaryCardsCount; i++) {
-                SanctuaryCard sanctuaryCard = player.sanctuaryCards.get(i);
+
+                SanctuaryCard sanctuaryCard = new SanctuaryCard();
+                if(sanctuaryCardsVariant.equals("DETAILED")){
+                    sanctuaryCard = player.sanctuaryCards.get(i);
+                } else if (sanctuaryCardsVariant.equals("ID")){
+                    sanctuaryCard = SanctuaryCardsCollection.getSanctuaryCard(player.sanctuaryCardsIDs.get(i));
+                }
+
                 Resources resources = sanctuaryCard.resources;
                 String color = sanctuaryCard.color;
 
