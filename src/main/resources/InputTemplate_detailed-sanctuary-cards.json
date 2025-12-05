@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Anna",
+    "regionCardsExplorationDurations": [
+      35,
+      59,
+      47,
+      57,
+      22,
+      46,
+      55,
+      29
+    ],
+    "sanctuaryCards": [
+      {
+        "color": "green",
+        "resources": {
+          "uddu": 0,
+          "okiko": 0,
+          "goldlog": 0,
+          "nightTime": false,
+          "clue": true
+        },
+        "quest": {
+          "type": null,
+          "multiplier": null
+        }
+      },
+      {
+        "color": "blue",
+        "resources": {
+          "uddu": 0,
+          "okiko": 0,
+          "goldlog": 0,
+          "nightTime": false,
+          "clue": false
+        },
+        "quest": {
+          "type": "blue",
+          "multiplier": 1
+        }
+      },
+      {
+        "color": "gray",
+        "resources": {
+          "uddu": 0,
+          "okiko": 0,
+          "goldlog": 0,
+          "nightTime": false,
+          "clue": true
+        },
+        "quest": {
+          "type": "clue",
+          "multiplier": 1
+        }
+      },
+      {
+        "color": "gray",
+        "resources": {
+          "uddu": 0,
+          "okiko": 0,
+          "goldlog": 0,
+          "nightTime": false,
+          "clue": true
+        },
+        "quest": {
+          "type": "colorSet",
+          "multiplier": 4
+        }
+      }
+    ]
+  },
+  {
+    "name": "Bella",
+    "regionCardsExplorationDurations": [
+      69,
+      30,
+      8,
+      12,
+      2,
+      54,
+      18,
+      56
+    ],
+    "sanctuaryCards": []
+  }
+]
