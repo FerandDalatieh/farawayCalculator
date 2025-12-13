@@ -806,7 +806,7 @@
     },
     "quest": {
       "type": "resourcesSet",
-      "multiplier": 1
+      "multiplier": 3
     }
   }
 ]
